@@ -294,14 +294,5 @@ src/test/java/com/api/blogapi/
 └── PostServiceImplTest.java
 ```
 
-## Pontos em desenvolvimento
 
-Os seguintes pontos foram identificados pela leitura do código atual:
 
-- Corrigir os textos `// Mudar` no `pom.xml` para permitir a leitura pelo Maven.
-- Padronizar o erro ao criar comentário para um post inexistente: `addComentario()` ainda utiliza `Optional.get()` sem tratar a ausência do post.
-- Revisar o carregamento dos comentários na listagem paginada: a sobrecarga `findAll(Pageable, String)` não possui `@Transactional`, enquanto a coleção é lazy e `open-in-view` está desativado. Essa combinação pode causar falha durante o mapeamento dos posts.
-- Revisar mensagens duplicadas, erros de digitação e traduções ainda fixas em português.
-- Ampliar os testes para as demais operações, validações e integração com o banco.
-
-O projeto ainda não implementa autenticação ou autorização. Esta documentação foi baseada na inspeção dos arquivos; a aplicação e os testes não foram executados durante sua elaboração.
